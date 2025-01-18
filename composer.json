@@ -2,7 +2,7 @@
     "name": "dell/php--oop",
     "autoload": {
         "psr-4": {
-            "Dell\\PhpOop\\": "src/"
+            "App\\": "src/"
         }
     },
     "authors": [
