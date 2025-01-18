@@ -4,10 +4,6 @@ namespace App;
 
 use Aws\S3\S3Client;
 use Aws\S3\Exception\S3Exception;
-use Dotenv\Dotenv;
-
-$dotenv = Dotenv::createImmutable(__DIR__ . "/../");
-$dotenv->load();
 
 class S3Storage implements FileStorage
 {
@@ -16,9 +12,7 @@ class S3Storage implements FileStorage
     // AWS credentials
     $s3key = $_ENV['AWS_KEY'];
     $s3Secret = $_ENV['AWS_SECRET'];
-
-    // Bucket and file details
-    $bucket = 'php--oop';
+    $bucket = $_ENV['AWS_BUCKET'];
 
     // Instantiate an Amazon S3 client.
     $s3 = new S3Client([
